@@ -1,7 +1,7 @@
 import logging
 import pyromod
 
-from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
+from pymongo import MongoClient
 from pyrogram import Client
 from pyrogram.enums import ParseMode
 
@@ -18,7 +18,7 @@ logging.getLogger("oldpyro").setLevel(logging.ERROR)
 logging.getLogger("telethon").setLevel(logging.ERROR)
 LOGGER = logging.getLogger(__name__)
 
-mongo = MongoCli(config.MONGO_DB_URI)
+mongo = MongoClient(config.MONGO_DB_URI)
 db = mongo.StringGen
 
 
